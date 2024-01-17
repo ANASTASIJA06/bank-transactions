@@ -2,19 +2,26 @@
 # Darbības ar masīviem - https://www.w3schools.com/python/python_arrays.asp
 # 
 
-transactions = []
 
 def deposit(transactions, amount):
-    pass
+    transactions.append(amount)
+pass
+
 
 def withdraw(transactions, amount):
-    pass
+     transactions.append(-amount)
+pass
+    
 
 def check_balance(transactions):
-    pass
+    
+    print("Balance is:", sum( transactions))
 
 def list():
-    pass
+    print(transactions)
+
+transactions = []
+
 
 while True:
     print("\nBanking Options:")
@@ -27,13 +34,15 @@ while True:
     choice = input("Enter your choice (1-4): ")
 
     if choice == '1':
-        pass
+        amount = int(input("Enter amount: "))
+        deposit(transactions,amount) 
     elif choice == '2':
-        pass
+        amount = int(input("Enter amount: "))
+        withdraw(transactions, amount)
     elif choice == '3':
-        pass
+        check_balance(transactions)
     elif choice == '4':
-        pass
+        list()
     elif choice == '5':
         print("Exiting the banking system. Thank you!")
         break
